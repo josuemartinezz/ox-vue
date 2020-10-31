@@ -23,14 +23,14 @@
 </template>
 
 <script>
-import oxbutton from "@/components/oxbutton";
+import oxbutton from "@/components/oxbutton/oxbutton";
 export default {
   components: {
     oxbutton,
   },
   methods: {
     event() {
-      console.log("Hola como estas");
+      console.log("Este es mi evento click");
     },
   },
 };
