@@ -2,6 +2,7 @@
   <div>
     <oxalert color="primary">Hola</oxalert>
     <oxalert color="danger" flat>Hola</oxalert>
+    <oxalert color="danger" flat outline>Hola</oxalert>
   </div>
 </template>
 
