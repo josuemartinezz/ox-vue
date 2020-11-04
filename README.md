@@ -1,24 +1,15 @@
-# ox-vue
+# ox-framework
+Ox is a framework of UI/UX components created with love to make projects easily and with a pleasant style.
 
-## Project setup
-```
-npm install
-```
+## Starting 🚀
+Hey, at the moment you can only use ox-framework through the beautiful cdn, using it is as easy as biting into an apple :)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Status: In construction
+We are still working hard to get an alpha version
 
-### Compiles and minifies for production
-```
-npm run build
-```
+## Built with 🛠️
+* [Less](http://lesscss.org/) - The CSS preprocessor.
+* [Vue](https://vuejs.org/) - Usado para manejar estilos en el DOM.
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Authors ✒️
+* **Josué Martínez** - *Front-End Developer* - [josuemartinezz](https://github.com/josuemartinezz)
