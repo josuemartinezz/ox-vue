@@ -1,77 +1,33 @@
 <template>
   <button
-    v-on="listeners"
-    :class="[`ox-btn-${this.getColor}`, { outline: outline, square: square }]"
+    :class="[`bg-${getColor}-400 hover:bg-${getColor}-500`]"
+    class="cursor-pointer mr-1 rounded-lg focus:outline-none transition duration-300 py-2 px-3 text-white text-xs"
   >
     <slot></slot>
-    <div class="ox-btn-loading" v-if="loading"></div>
   </button>
 </template>
 
 <script>
 export default {
-  name: "oxbutton",
-  data() {
-    return {};
-  },
+  name: "ox-button",
   props: {
-    outline: {
-      type: Boolean,
-      default: false,
-    },
-    square: {
-      type: Boolean,
-      default: false,
-    },
-    color: {
-      type: String,
-      default: "null",
-    },
-    loading: {
-      type: Boolean,
-      default: false,
-    },
-    to: {
-      type: String,
-      default: null,
-    },
+    color: { type: String },
   },
   computed: {
-    listeners() {
-      return {
-        click: (event) => this.click(event),
-      };
-    },
     getColor() {
-      if (this.color.charAt(0) != "#") {
-        return `${this.color}`;
-      } else {
-        return null;
+      switch (this.color) {
+        case "primary":
+          return "blue";
+        case "warning":
+          return "yellow";
+        case "error":
+          return "red";
+        case "success":
+          return "green";
+        default:
+          return "blue";
       }
-    },
-  },
-  methods: {
-    click() {
-      this.$emit("click");
-      this.to != null ? this.$router.push(this.to) : "";
-    },
-    hexToRGBA(hex, opacity) {
-      return (
-        "rgba(" +
-        (hex = hex.replace("#", ""))
-          .match(new RegExp("(.{" + hex.length / 3 + "})", "g"))
-          .map(function (l) {
-            return parseInt(hex.length % 2 ? l + l : l, 16);
-          })
-          .concat(isFinite(opacity) ? opacity : 1)
-          .join(",") +
-        ")"
-      );
     },
   },
 };
 </script>
-
-<style lang="less" scoped>
-@import "./oxbutton.less";
-</style>
